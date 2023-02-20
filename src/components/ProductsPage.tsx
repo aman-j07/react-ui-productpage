@@ -19,6 +19,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 function ProductsPage() {
+
+  // array of images for carousal and products group
   const images = {
     carousal: [
       require("../assets/images/carousal/trending-1.png"),
@@ -35,6 +37,7 @@ function ProductsPage() {
     ],
   };
 
+  // an object for providing necessary props for react-slick slider
   const settings = {
     dots: false,
     infinite: true,
@@ -51,7 +54,7 @@ function ProductsPage() {
   };
 
   return (
-    <div className="productspage">
+    <div className="container">
       <header className="header">
         <div className="header__offer vsmtext">
           20% Off! Code: SPRING21 - Terms apply*

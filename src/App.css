@@ -1,4 +1,5 @@
-.productspage {
+/* container for wrapping all the html in one division*/
+.container {
     font-family: 'Inter', sans-serif;
     max-width: 1140px;
     margin: auto;
