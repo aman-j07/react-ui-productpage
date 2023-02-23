@@ -105,6 +105,11 @@
     gap: 9px;
 }
 
+.btn--transparent {
+    border: none;
+    background-color: transparent;
+}
+
 button:hover {
     cursor: pointer;
 }
@@ -124,12 +129,23 @@ button:hover {
     text-align: center;
 }
 
-.header__navs {
+.header__navgrp {
     padding: 32px var(--pad);
+    gap: 32px;
+    transition: 500ms;
+}
+
+.header__navgrp--open {
+    height: 300px;
+}
+
+.header__toggler {
+    display: none;
 }
 
 .header__navbar {
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .header__listgrp {
@@ -159,8 +175,9 @@ button:hover {
     gap: 32px;
 }
 
-.header__navs {
-    gap: 32px;
+.header__navlink a{
+    text-decoration: none;
+    color: black;
 }
 
 .header__searchgrp {
@@ -345,6 +362,16 @@ button:hover {
     }
 }
 
+@media (width < 850px) {
+    .header__toggler {
+        display: block;
+    }
+
+    .header__navgrp {
+        height: 0px;
+    }
+}
+
 @media (width < 500px) {
     .productsgallery {
         padding: 30px var(--pad);
@@ -353,4 +380,5 @@ button:hover {
     .productsgallery__head{
         font-size: 24px;
     }
+
 }
