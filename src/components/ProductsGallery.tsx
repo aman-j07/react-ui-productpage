@@ -36,8 +36,8 @@ function ProductsGallery(props: PropTypes) {
 
   const settingsOther = {...settings,responsive:[],arrows:false};
 
-  const products = props.images.map((ele, i) => (
-    <div className="card">
+  const products = props.images.map((ele) => (
+    <div key={ele} className="card">
       <div className="card__photoarea">
         <span className="card__like">
           <FavoriteBorder />
@@ -56,8 +56,8 @@ function ProductsGallery(props: PropTypes) {
         </div>
         <div className="card__rating row--centeraligned">
           <span>
-            {[1, 1, 1, 1, 1].map((ele) => (
-              <Star fontSize="inherit" />
+            {[1, 2, 3, 4, 5].map((ele) => (
+              <Star key={ele} fontSize="inherit" />
             ))}
           </span>
           <span>(45)</span>

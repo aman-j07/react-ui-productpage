@@ -132,11 +132,7 @@ button:hover {
 .header__navgrp {
     padding: 32px var(--pad);
     gap: 32px;
-    transition: 500ms;
-}
-
-.header__navgrp--open {
-    height: 300px;
+    overflow: hidden;
 }
 
 .header__toggler {
@@ -186,6 +182,11 @@ button:hover {
     gap: 4px;
 }
 
+.header__searchgrp--sidebar {
+    display: none;
+    flex-grow: 1;
+}
+
 .searchgrp__inp {
     border: none;
     background-color: transparent;
@@ -202,6 +203,44 @@ button:hover {
 
 .hero__banner {
     max-width: 100%;
+}
+
+.header__sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; 
+    transition: 300ms;  
+    height: 100vh;
+    min-width: 100%; 
+    background-color: #8080807d;
+}
+
+.header__sidebar--open {
+    left: 0%;
+    z-index: 10;
+}
+
+.sidebar__content {
+    background-color: white;
+    position: relative;
+    max-width: 200px;
+    height: 100%;
+    padding: 40px 10px 10px;
+}
+
+.sidebar__toggler {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.sidebar__content .header__navlist{
+    display: block;
+    font-size: 20px;
+}
+
+.sidebar__content .header__navlink{
+    margin: 10px 0;
 }
 
 /* Products Carousal CSS */
@@ -368,17 +407,47 @@ button:hover {
     }
 
     .header__navgrp {
-        height: 0px;
+        padding: 10px 15px;
+    }
+
+    .header__listgrp {
+        flex-grow: 0;
+    }
+
+    .header__navlist {
+        gap: 5px;
+    }
+
+    .header__navlist--sidebar, .header__navbar--sidebar {
+        display: none;
+    }
+
+    .header__searchgrp--sidebar {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .searchgrp__inp {
+        min-width: 0;
     }
 }
 
 @media (width < 500px) {
+    .header__logo {
+        max-height: 26px;
+        margin: 0 5px;
+    }
+
     .productsgallery {
-        padding: 30px var(--pad);
+        padding: 20px var(--pad);
     }
 
     .productsgallery__head{
         font-size: 24px;
+    }
+
+    .productsgallery .card {
+        margin-right: 10px;
     }
 
 }

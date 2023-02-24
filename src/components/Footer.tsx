@@ -6,10 +6,10 @@ function Footer() {
         <div className="footer__top row--centeraligned">
           {[1, 2, 3, 4, 5].map((ele) => {
             return (
-              <ul className="footer__lists">
+              <ul key={ele} className="footer__lists">
                 <li className="footer__listhead smtext">FOOTER{ele}</li>
-                {[1, 2, 3].map((ele) => (
-                  <li className="footer__listitem vsmtext">Item</li>
+                {[1, 2, 3].map((innerEle) => (
+                  <li key={innerEle} className="footer__listitem vsmtext">Item</li>
                 ))}
               </ul>
             );
